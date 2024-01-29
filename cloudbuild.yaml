@@ -1,0 +1,21 @@
+passos: 
+-  nome:  ubuntu 
+  args: [ 'bash' , '-c' , "echo '$COMMIT_SHA' > REVISION.txt" ] 
+-  nome:  gcr.io/cloud-builders/gsutil 
+  args: 
+    -  '-m' 
+    -  'rsync' 
+    -  '-d' 
+    -  '-r' 
+    -  'dags' 
+    -  'gs://${_GCS_BUCKET}/dags' 
+-  nome:  gcr.io/cloud-builders/gsutil 
+  args:
+    -  '-m' 
+    -  'rsync' 
+    -  '-d' 
+    -  '-r' 
+    -  'plugins' 
+    -  'gs://${_GCS_BUCKET}/plugins'
+opções: 
+  registro:  CLOUD_LOGGING_ONLY
