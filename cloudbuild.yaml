@@ -19,3 +19,5 @@ steps:
     - 'gs://${_GCS_BUCKET}/plugins'
 options:
   logging: CLOUD_LOGGING_ONLY
+
+# test
