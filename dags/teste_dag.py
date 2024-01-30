@@ -24,4 +24,3 @@ with DAG(
     dag_end  = DummyOperator(task_id='dag_end', dag=dag)
 
     dag_init >> dag_end
-
